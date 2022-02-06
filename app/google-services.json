@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "694445002853",
+    "firebase_url": "https://ecommerece-46fa2-default-rtdb.firebaseio.com",
+    "project_id": "ecommerece-46fa2",
+    "storage_bucket": "ecommerece-46fa2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694445002853:android:faa826738af38c5cde368c",
+        "android_client_info": {
+          "package_name": "com.labmuffles.ecommerece"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "694445002853-jlm3f3sfkgfl9o9nqcpvdsu2b6hg6o57.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.labmuffles.ecommerece",
+            "certificate_hash": "065e0edea5e38e856a0eee2193ed4699c6f28fcd"
+          }
+        },
+        {
+          "client_id": "694445002853-i2p5ep15losoeeidagcab2nn5rddn0q5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAg-eQYFgj7-vXpWr9j6MYQ40UNyc3B9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "694445002853-i2p5ep15losoeeidagcab2nn5rddn0q5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
