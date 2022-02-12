@@ -1,4 +1,4 @@
-package com.labmuffles.ecommerece;
+package com.labmuffles.ecommerece.model;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

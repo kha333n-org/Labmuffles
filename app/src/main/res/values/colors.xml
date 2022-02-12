@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="Color_Primary">#BF007A</color>
-    <color name="Color_Primary_Dark">#BF007A</color>
+    <color name="Color_Primary_Dark">#5A023A</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="Button_color">#E91E63</color>
 </resources>

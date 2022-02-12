@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.labmuffles.ecommerece">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Labmuffles">
         <activity
+            android:name=".SettingsActivity"
+            android:exported="true" />
+        <activity
             android:name=".HomeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.Labmuffles.NoActionBar" />
+        <activity
+            android:name=".AdminCategoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AdminAddNewProductActivity"
             android:exported="true" />
         <activity
             android:name=".RegisterActivity"
