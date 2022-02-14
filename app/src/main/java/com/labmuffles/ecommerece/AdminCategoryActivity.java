@@ -4,10 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 
-import com.labmuffles.ecommerece.prevelant.Prevelant;
+import com.labmuffles.ecommerece.prevelant.Prevalent;
 
 public class AdminCategoryActivity extends AppCompatActivity {
 
@@ -22,7 +21,7 @@ public class AdminCategoryActivity extends AppCompatActivity {
 
         category1.setOnClickListener(view -> startActivity(
                 new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class)
-                .putExtra(Prevelant.categoryKey, "category1")
+                .putExtra(Prevalent.categoryKey, "category1")
         ));
     }
 }

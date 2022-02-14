@@ -24,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
-import com.labmuffles.ecommerece.prevelant.Prevelant;
+import com.labmuffles.ecommerece.prevelant.Prevalent;
 import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
@@ -67,7 +67,7 @@ public class SettingsActivity extends AppCompatActivity {
         
         userInfoDisplay(profileImage, fullNameEditText, phoneNumberEditText, addressEditText);
 
-        storageReference = FirebaseStorage.getInstance().getReference(Prevelant.userImagesFolder);
+        storageReference = FirebaseStorage.getInstance().getReference(Prevalent.userImagesFolder);
 
         imageSelectButton.setOnClickListener(view -> {
             checker = CLICKED;
@@ -115,14 +115,14 @@ public class SettingsActivity extends AppCompatActivity {
 
         HashMap<String,Object> userMap = new HashMap<>();
 
-        userMap.put(Prevelant.userProfileName, fullNameEditText.getText().toString());
-        userMap.put(Prevelant.userProfileAddress, addressEditText.getText().toString());
-        userMap.put(Prevelant.userOrderPhone, phoneNumberEditText.getText().toString());
+        userMap.put(Prevalent.userProfileName, fullNameEditText.getText().toString());
+        userMap.put(Prevalent.userProfileAddress, addressEditText.getText().toString());
+        userMap.put(Prevalent.userOrderPhone, phoneNumberEditText.getText().toString());
 
-        reference.child(Prevelant.currentOnlineUser.getPhone()).updateChildren(userMap);
+        reference.child(Prevalent.currentOnlineUser.getPhone()).updateChildren(userMap);
 
         progressDialog.dismiss();
-        startActivity(new Intent(SettingsActivity.this, MainActivity.class));
+        startActivity(new Intent(SettingsActivity.this, HomeActivity.class));
         Toast.makeText(SettingsActivity.this, "Account updated successfully...", Toast.LENGTH_SHORT).show();
         finish();
     }
@@ -148,7 +148,7 @@ public class SettingsActivity extends AppCompatActivity {
     private void uploadImage() {
 
         if (imageUri != null){
-            final StorageReference fileRef = storageReference.child(Prevelant.currentOnlineUser.getPhone() + ".jpg");
+            final StorageReference fileRef = storageReference.child(Prevalent.currentOnlineUser.getPhone() + ".jpg");
 
             uploadTask = fileRef.putFile(imageUri);
             uploadTask.continueWithTask(new Continuation() {
@@ -168,18 +168,18 @@ public class SettingsActivity extends AppCompatActivity {
 
                         HashMap<String,Object> userMap = new HashMap<>();
 
-                        userMap.put(Prevelant.userProfileName, fullNameEditText.getText().toString());
-                        userMap.put(Prevelant.userProfileAddress, addressEditText.getText().toString());
-                        userMap.put(Prevelant.userOrderPhone, phoneNumberEditText.getText().toString());
-                        userMap.put(Prevelant.userProfileImage, myUrl);
+                        userMap.put(Prevalent.userProfileName, fullNameEditText.getText().toString());
+                        userMap.put(Prevalent.userProfileAddress, addressEditText.getText().toString());
+                        userMap.put(Prevalent.userOrderPhone, phoneNumberEditText.getText().toString());
+                        userMap.put(Prevalent.userProfileImage, myUrl);
 
-                        reference.child(Prevelant.currentOnlineUser.getPhone()).updateChildren(userMap);
+                        reference.child(Prevalent.currentOnlineUser.getPhone()).updateChildren(userMap);
 
-                        Prevelant.currentOnlineUser.setImage(myUrl);
+                        Prevalent.currentOnlineUser.setImage(myUrl);
 
                         progressDialog.dismiss();
 
-                        startActivity(new Intent(SettingsActivity.this, MainActivity.class));
+                        startActivity(new Intent(SettingsActivity.this, HomeActivity.class));
                         Toast.makeText(SettingsActivity.this, "Account updated successfully...", Toast.LENGTH_SHORT).show();
                         finish();
                     }else {
@@ -195,17 +195,17 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void userInfoDisplay(CircleImageView image, EditText fullName, EditText phoneNumber, EditText address) {
-        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(Prevelant.currentOnlineUser.getPhone());
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(Prevalent.currentOnlineUser.getPhone());
 
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
-                    if (snapshot.child(Prevelant.userProfileImage).exists()){
-                        String userImage = snapshot.child(Prevelant.userProfileImage).getValue().toString();
-                        String userName = snapshot.child(Prevelant.userProfileName).getValue().toString();
-                        String userPhone = snapshot.child(Prevelant.userProfilePhoneNumber).getValue().toString();
-                        String userAddress = snapshot.child(Prevelant.userProfileAddress).getValue().toString();
+                    if (snapshot.child(Prevalent.userProfileImage).exists()){
+                        String userImage = snapshot.child(Prevalent.userProfileImage).getValue().toString();
+                        String userName = snapshot.child(Prevalent.userProfileName).getValue().toString();
+                        String userPhone = snapshot.child(Prevalent.userProfilePhoneNumber).getValue().toString();
+                        String userAddress = snapshot.child(Prevalent.userProfileAddress).getValue().toString();
 
                         Picasso.get().load(userImage).into(profileImage);
                         fullName.setText(userName);

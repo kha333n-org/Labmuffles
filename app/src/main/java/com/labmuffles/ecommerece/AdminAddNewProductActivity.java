@@ -1,6 +1,5 @@
 package com.labmuffles.ecommerece;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,23 +8,19 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.labmuffles.ecommerece.prevelant.Prevelant;
+import com.labmuffles.ecommerece.prevelant.Prevalent;
 
-import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -48,14 +43,14 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_add_new_product);
 
-        categoryName = getIntent().getExtras().get(Prevelant.categoryKey).toString();
+        categoryName = getIntent().getExtras().get(Prevalent.categoryKey).toString();
         addNewProduct = (Button) findViewById(R.id.add_new_product);
         productNameInput = (EditText) findViewById(R.id.product_name);
         productDescriptionInput = (EditText) findViewById(R.id.product_description);
         productPriceInput = (EditText) findViewById(R.id.product_price);
         productImageInput  = (ImageView)    findViewById(R.id.select_product_image);
-        productImageRef = FirebaseStorage.getInstance().getReference().child(Prevelant.productsImagesFolder);
-        productDbReference = FirebaseDatabase.getInstance().getReference().child(Prevelant.productDBRoot);
+        productImageRef = FirebaseStorage.getInstance().getReference().child(Prevalent.productsImagesFolder);
+        productDbReference = FirebaseDatabase.getInstance().getReference().child(Prevalent.productDBRoot);
         loadingBar = new ProgressDialog(this);
 
         productImageInput.setOnClickListener(view -> {
@@ -136,14 +131,14 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
     private void saveProductInformationToDatabase() {
         HashMap<String, Object> productMap = new HashMap<>();
-        productMap.put(Prevelant.productDBId, productRandomKey);
-        productMap.put(Prevelant.productDBDate, saveCurrentDate);
-        productMap.put(Prevelant.productDBTime, saveCurrentTime);
-        productMap.put(Prevelant.productDBDescription, productDescription);
-        productMap.put(Prevelant.productDBImage, downloadImageUrl);
-        productMap.put(Prevelant.productDBCategory, categoryName);
-        productMap.put(Prevelant.productDBPrice, productPrice);
-        productMap.put(Prevelant.productDBName, productName);
+        productMap.put(Prevalent.productDBId, productRandomKey);
+        productMap.put(Prevalent.productDBDate, saveCurrentDate);
+        productMap.put(Prevalent.productDBTime, saveCurrentTime);
+        productMap.put(Prevalent.productDBDescription, productDescription);
+        productMap.put(Prevalent.productDBImage, downloadImageUrl);
+        productMap.put(Prevalent.productDBCategory, categoryName);
+        productMap.put(Prevalent.productDBPrice, productPrice);
+        productMap.put(Prevalent.productDBName, productName);
 
         productDbReference.child(productRandomKey).updateChildren(productMap)
                 .addOnCompleteListener(task -> {

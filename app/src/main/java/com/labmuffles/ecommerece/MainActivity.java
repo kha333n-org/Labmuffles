@@ -17,9 +17,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.labmuffles.ecommerece.model.Users;
-import com.labmuffles.ecommerece.prevelant.Prevelant;
+import com.labmuffles.ecommerece.prevelant.Prevalent;
 
-import io.paperdb.Paper;
+import io.paperdb.Paper;    
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        String userPhoneKey = Paper.book().read(Prevelant.userPhoneKey);
-        String userPasswordKey = Paper.book().read(Prevelant.userPasswordKey);
-        String userTypeKey = Paper.book().read(Prevelant.userTypeKey);
+        String userPhoneKey = Paper.book().read(Prevalent.userPhoneKey);
+        String userPasswordKey = Paper.book().read(Prevalent.userPasswordKey);
+        String userTypeKey = Paper.book().read(Prevalent.userTypeKey);
 
         if (userPhoneKey != "" && userPasswordKey != ""){
             if (!TextUtils.isEmpty(userPhoneKey) && !TextUtils.isEmpty(userPasswordKey)){
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
 
     private void allowAccess(final String phone, final String password, final String parentDbName) {
         final DatabaseReference rootRef;
@@ -81,14 +82,14 @@ public class MainActivity extends AppCompatActivity {
                             if (parentDbName.equals("Admins")){
                                 Toast.makeText(MainActivity.this, "Logged in successfully!...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
-                                Prevelant.currentOnlineUser = userData;
+                                Prevalent.currentOnlineUser = userData;
 
                                 startActivity(new Intent(MainActivity.this, AdminCategoryActivity.class));
 
                             }else {
                                 Toast.makeText(MainActivity.this, "Logged in successfully!...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
-                                Prevelant.currentOnlineUser = userData;
+                                Prevalent.currentOnlineUser = userData;
 
                                 startActivity(new Intent(MainActivity.this,HomeActivity.class));
                             }

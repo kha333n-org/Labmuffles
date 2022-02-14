@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.labmuffles.ecommerece.model.MD5Hash;
 import com.labmuffles.ecommerece.model.Users;
-import com.labmuffles.ecommerece.prevelant.Prevelant;
+import com.labmuffles.ecommerece.prevelant.Prevalent;
 import com.rey.material.widget.CheckBox;
 
 import io.paperdb.Paper;
@@ -101,9 +101,9 @@ public class loginActivity extends AppCompatActivity {
 
         if (rememberCheckBox.isChecked()){
             Paper.book().destroy();
-            Paper.book().write(Prevelant.userPhoneKey, phone);
-            Paper.book().write(Prevelant.userPasswordKey, MD5Hash.compute(password));
-            Paper.book().write(Prevelant.userTypeKey, parentDbName);
+            Paper.book().write(Prevalent.userPhoneKey, phone);
+            Paper.book().write(Prevalent.userPasswordKey, MD5Hash.compute(password));
+            Paper.book().write(Prevalent.userTypeKey, parentDbName);
         }
 
         final DatabaseReference rootRef;
@@ -122,7 +122,7 @@ public class loginActivity extends AppCompatActivity {
                                 Toast.makeText(loginActivity.this, "Logged in successfully!...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
-                                Prevelant.currentOnlineUser = userData;
+                                Prevalent.currentOnlineUser = userData;
 
                                 startActivity(new Intent(loginActivity.this,AdminCategoryActivity.class));
 
@@ -130,7 +130,7 @@ public class loginActivity extends AppCompatActivity {
                                 Toast.makeText(loginActivity.this, "Logged in successfully!...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
-                                Prevelant.currentOnlineUser = userData;
+                                Prevalent.currentOnlineUser = userData;
 
                                 startActivity(new Intent(loginActivity.this,HomeActivity.class));
                             }

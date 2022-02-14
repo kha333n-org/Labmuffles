@@ -15,12 +15,12 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.labmuffles.ecommerece.model.Products;
-import com.labmuffles.ecommerece.prevelant.Prevelant;
+import com.labmuffles.ecommerece.prevelant.Prevalent;
 import com.labmuffles.ecommerece.viewholder.ProductViewHolder;
 import com.squareup.picasso.Picasso;
 
@@ -54,7 +54,7 @@ public class HomeActivity extends AppCompatActivity
 
         Paper.init(this);
 
-        productRef = FirebaseDatabase.getInstance().getReference().child(Prevelant.productDBRoot);
+        productRef = FirebaseDatabase.getInstance().getReference().child(Prevalent.productDBRoot);
         recyclerView = findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
@@ -79,9 +79,16 @@ public class HomeActivity extends AppCompatActivity
         userNameTextView = headerView.findViewById(R.id.user_profile_name);
         profileImageView = headerView.findViewById(R.id.user_profile_image);
 
-        userNameTextView.setText(Prevelant.currentOnlineUser.getName());
+        userNameTextView.setText(Prevalent.currentOnlineUser.getName());
 
-        Picasso.get().load(Prevelant.currentOnlineUser.getImage()).placeholder(R.drawable.profile).into(profileImageView);
+        Picasso.get().load(Prevalent.currentOnlineUser.getImage()).placeholder(R.drawable.profile).into(profileImageView);
+
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+            startActivity(intent);
+        });
 
     }
 
@@ -102,6 +109,11 @@ public class HomeActivity extends AppCompatActivity
                         holder.txtProductPrice.setText("Price: " + model.getPrice() + " Rs");
 
                         Picasso.get().load(model.getImage()).into(holder.imageView);
+
+                        holder.itemView.setOnClickListener(view -> {
+                            startActivity(new Intent(HomeActivity.this, ProductDetailsActivity.class)
+                                    .putExtra("pid", model.getProductId()));
+                        });
                     }
 
                     @NonNull
@@ -157,6 +169,7 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_cart) {
+            startActivity(new Intent(HomeActivity.this, CartActivity.class));
         }else
             if (id == R.id.nav_orders){
 

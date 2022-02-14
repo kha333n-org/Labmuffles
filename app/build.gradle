@@ -51,6 +51,7 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
+
     //Circular image view...
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
@@ -81,6 +82,6 @@ dependencies {
     //Picasso library for images
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-    //Image cropper library
-    //implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.+'
+    //Elegant Number Button
+    implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
 }
