@@ -47,7 +47,7 @@ public class CartActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child(Prevalent.cartDBRoot);
+        DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child(Prevalent.cartDBRoot);
         FirebaseRecyclerOptions<Cart> options = new FirebaseRecyclerOptions.Builder<Cart>()
                 .setQuery(cartListRef.child(Prevalent.cartDBUserView)
                         .child(Prevalent.currentOnlineUser.getPhone())
