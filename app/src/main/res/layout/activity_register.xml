@@ -4,35 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity"
-    android:background="@drawable/register"
+    tools:context=".user.RegisterActivity"
+    android:background="@color/black"
     >
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:src="@drawable/applogo"
-        android:id="@+id/register_app_logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        />
-
-    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:src="@drawable/labmuffles_banner"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/register_app_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:contentDescription="Lammuffles Banner" />
+
+    <EditText
         android:id="@+id/register_name_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/register_app_logo"
-        android:layout_marginTop="6dp"
-        android:background="@drawable/input_design"
-        android:padding="20dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="70dp"
         android:layout_marginRight="15dp"
+        android:background="@color/white"
         android:hint="Name"
         android:inputType="textPersonName"
-        android:textColor="@color/Color_Primary_Dark"
-        android:textColorHint="@color/Color_Primary_Dark"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        />
+        android:padding="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="17sp" />
 
     <EditText
         android:id="@+id/register_phoneNumber_input"
@@ -40,16 +40,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_name_input"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="15dp"
-        android:background="@drawable/input_design"
-        android:hint="Phone Number"
-        android:inputType="number"
+        android:background="@color/white"
+        android:hint = "Phone Number"
+        android:inputType="phone"
         android:padding="20dp"
-        android:textColor="@color/Color_Primary_Dark"
-        android:textColorHint="@color/Color_Primary_Dark"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:textSize="17sp"
-        android:textStyle="bold" />
+         />
 
 
     <EditText
@@ -57,17 +57,16 @@
         android:layout_height="wrap_content"
         android:id="@+id/register_password_input"
         android:layout_below="@+id/register_phoneNumber_input"
-        android:layout_marginTop="6dp"
-        android:background="@drawable/input_design"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
         android:padding="20dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textColor="@color/Color_Primary_Dark"
-        android:textColorHint="@color/Color_Primary_Dark"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:textSize="17sp"
-        android:textStyle="bold"
         />
 
 
@@ -79,7 +78,7 @@
         android:layout_below="@+id/register_password_input"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/buttons"
         android:padding="17dp"
         android:text="Create Account"

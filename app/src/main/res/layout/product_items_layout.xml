@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="20dp"
     android:layout_marginStart="15dp"
     android:layout_marginEnd="15dp"
-    app:cardElevation="15dp">
+    app:cardElevation="15dp"
+    android:background="@color/white">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:layout_margin="1dp">
         
         <TextView
             android:layout_width="match_parent"
@@ -19,18 +23,19 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/Color_Primary"
+            android:textColor="@color/white"
             android:id="@+id/product_items_name"
             />
 
         <ImageView
+            android:id="@+id/product_item_image"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_below="@+id/product_items_name"
-            android:scaleType="centerCrop"
             android:layout_marginTop="2dp"
-            android:id="@+id/product_item_image"
-            />
+            android:contentDescription="Product Image"
+            android:scaleType="centerCrop"
+            tools:ignore="ImageContrastCheck" />
 
         <TextView
             android:layout_width="match_parent"
@@ -39,7 +44,7 @@
             android:textAlignment="center"
             android:layout_below="@+id/product_item_image"
             android:textSize="18sp"
-            android:textColor="@color/Color_Primary_Dark"
+            android:textColor="@color/white"
             android:id="@+id/product_items_price"
             />
 
@@ -51,7 +56,7 @@
             android:layout_below="@+id/product_items_price"
             android:layout_marginTop="2dp"
             android:textSize="16sp"
-            android:textColor="@color/Color_Primary_Dark"
+            android:textColor="@color/white"
             android:id="@+id/product_items_description"
             />
         

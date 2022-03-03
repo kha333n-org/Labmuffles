@@ -11,7 +11,7 @@ import com.labmuffles.ecommerece.interfaces.ItemClickListener;
 
 public class CartViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     public TextView txtProductName, txtProductPrice, txtProductQuantity;
-    private ItemClickListener itemClickListener;
+    public ItemClickListener itemClickListener;
 
     public CartViewHolder(@NonNull View itemView) {
         super(itemView);

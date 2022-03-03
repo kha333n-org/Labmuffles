@@ -1,18 +1,18 @@
 package com.labmuffles.ecommerece.model;
 
 public class Users {
-    private String name, phone, password, image, address;
+    private String name, phone, password, image, address, orderId;
 
-    public Users(){
-
+      public Users() {
     }
 
-    public Users(String name, String phone, String password, String image, String address) {
+    public Users(String name, String phone, String password, String image, String address, String orderId) {
         this.name = name;
         this.phone = phone;
         this.password = password;
         this.image = image;
         this.address = address;
+        this.orderId = orderId;
     }
 
     public String getName() {
@@ -53,5 +53,13 @@ public class Users {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 }

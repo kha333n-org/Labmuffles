@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CartActivity">
+    tools:context=".user.CartActivity"
+    android:background="@color/black">
     
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/Color_Primary_Dark"
         android:layout_alignParentTop="true"
         android:id="@+id/RL_total_price"
         >
@@ -19,35 +20,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Total Price"
+            android:text="Total Price : 0 Rs/-"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
     </RelativeLayout>
 
-    <view class="androidx.appcompat.app.AlertController$RecycleListView"
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="5dp"
         android:id="@+id/cart_list"
         android:layout_below="@+id/RL_total_price"
         android:layout_above="@+id/proceed_to_checkout"
-        >
-
-    </view>
+        />
 
 
     <Button
+        android:id="@+id/proceed_to_checkout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimaryDark"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/Button_color"
         android:text="Proceed to checkout"
-        android:textColor="@color/white"
-        android:layout_margin="10dp"
-        android:id="@+id/proceed_to_checkout"
-        />
+        android:textColor="@color/black" />
 
 
 </RelativeLayout>

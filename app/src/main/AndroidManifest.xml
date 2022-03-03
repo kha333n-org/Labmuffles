@@ -8,37 +8,59 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/labmuffles_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/labmuffles_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Labmuffles"
-        tools:replace="android:theme">
+        tools:replace="android:theme, android:icon">
+
         <activity
-            android:name=".CartActivity"
+            android:name=".admin.AdminResetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".ProductDetailsActivity"
+            android:name=".user.AboutActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".admin.UsersWithOrdersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".user.SearchProductsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AdminUserProductsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AdminsNewOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".user.ConfirmFinalOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".user.CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".user.ProductDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".user.SettingsActivity"
             android:exported="true" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".user.HomeActivity"
             android:exported="true"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.Labmuffles.NoActionBar" />
         <activity
-            android:name=".AdminCategoryActivity"
+            android:name=".admin.AdminDashboardActivity"
             android:exported="true" />
         <activity
-            android:name=".AdminAddNewProductActivity"
+            android:name=".admin.AdminAddNewProductActivity"
             android:exported="true" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".user.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".loginActivity"
+            android:name=".user.loginActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

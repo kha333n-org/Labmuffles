@@ -14,7 +14,7 @@ android {
         minSdk 21
         targetSdk 31
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -67,6 +67,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics'
     implementation platform('com.google.firebase:firebase-bom:29.0.4')
     implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-config'
 
     //Paper DB...
     implementation 'io.github.pilgr:paperdb:2.7.2'

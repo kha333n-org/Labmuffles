@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user.AboutActivity"
+    android:background="@color/black">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/labmuffles_banner"
+        android:layout_marginTop="20dp"
+        android:id="@+id/banner"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="LABMUFLLES \nis a diversified healthcare solution provider. The company offers a broad range of established and innovative products for use in the fields of medical diagnostics and Life Sciences."
+        android:layout_below="@id/banner"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:id="@+id/about_text"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_text"
+        android:layout_margin="20dp"
+        android:minHeight="48dp"
+        android:id="@+id/contact_labmuffles"
+        android:text="Contact Labmuffles"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:text="App developed by: kha333n"
+        />
+
+</RelativeLayout>

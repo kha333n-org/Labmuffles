@@ -3,9 +3,16 @@ package com.labmuffles.ecommerece;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -16,15 +23,27 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
+import com.labmuffles.ecommerece.admin.AdminDashboardActivity;
 import com.labmuffles.ecommerece.model.Users;
 import com.labmuffles.ecommerece.prevelant.Prevalent;
+import com.labmuffles.ecommerece.user.HomeActivity;
+import com.labmuffles.ecommerece.user.RegisterActivity;
+import com.labmuffles.ecommerece.user.loginActivity;
 
-import io.paperdb.Paper;    
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
+
+import io.paperdb.Paper;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button joinNowButton, loginButton;
     private ProgressDialog loadingBar;
+    private boolean exit = false;
+
+    private FirebaseRemoteConfig remoteConfig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,14 +103,18 @@ public class MainActivity extends AppCompatActivity {
                                 loadingBar.dismiss();
                                 Prevalent.currentOnlineUser = userData;
 
-                                startActivity(new Intent(MainActivity.this, AdminCategoryActivity.class));
+                                startActivity(new Intent(MainActivity.this, AdminDashboardActivity.class)
+                                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
+                                finish();
 
                             }else {
                                 Toast.makeText(MainActivity.this, "Logged in successfully!...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
                                 Prevalent.currentOnlineUser = userData;
 
-                                startActivity(new Intent(MainActivity.this,HomeActivity.class));
+                                startActivity(new Intent(MainActivity.this, HomeActivity.class)
+                                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
+                                finish();
                             }
                         }
                         else {
@@ -112,4 +135,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        if (exit)
+            MainActivity.this.finish();
+        else {
+            Toast.makeText(this, "Press Back again to Exit.",
+                    Toast.LENGTH_SHORT).show();
+            exit = true;
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    exit = false;
+                }
+            }, 3000);
+
+        }
+    }
+
 }

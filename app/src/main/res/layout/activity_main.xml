@@ -5,31 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/welcome"
+    android:background="@color/black"
     >
 
     <ImageView
         android:id="@+id/app_logo"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:src="@drawable/applogo" />
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/labmuffles_banner" />
 
-    <TextView
-        android:id="@+id/app_slogan"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="251dp"
-        android:layout_marginEnd="122dp"
-        android:text="@string/app_slogan"
-        android:textAlignment="center"
-        android:textColor="@color/design_default_color_primary"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        />
 
     <Button
         android:id="@+id/main_button_login_now"
@@ -42,10 +30,11 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/buttons"
         android:padding="20dp"
-        android:text="Already have and account? Login"
+        android:text="Sign In"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/main_button_join_now"
@@ -55,11 +44,12 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="5dp"
-        android:background="@drawable/input_design"
+        android:background="@drawable/buttons"
         android:padding="20dp"
-        android:text="Join Now"
+        android:text="Sign Up"
         android:textAllCaps="false"
         android:textColor="@color/white"
+        android:textStyle="bold"
         android:textSize="18sp" />
 
 

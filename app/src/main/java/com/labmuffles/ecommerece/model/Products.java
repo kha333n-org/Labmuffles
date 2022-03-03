@@ -2,18 +2,18 @@ package com.labmuffles.ecommerece.model;
 
 public class Products {
     private String name, description, price, image,
-            category, productId
+            productId
             , time, date;
 
     public Products(){
     }
 
-    public Products(String name, String description, String price, String image, String category, String productId, String time, String date) {
+    public Products(String name, String description, String price, String image, String productId, String time, String date) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.image = image;
-        this.category = category;
+
         this.productId = productId;
         this.time = time;
         this.date = date;
@@ -49,14 +49,6 @@ public class Products {
 
     public void setImage(String image) {
         this.image = image;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     public String getProductId() {

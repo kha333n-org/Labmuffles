@@ -2,21 +2,7 @@ package com.labmuffles.ecommerece.model;
 
 public class Cart {
 
-    private String pid, name, price, quantity, time, discount, description, date;
-
-    public Cart() {
-    }
-
-    public Cart(String pid, String name, String price, String quantity, String time, String discount, String description, String date) {
-        this.pid = pid;
-        this.name = name;
-        this.price = price;
-        this.quantity = quantity;
-        this.time = time;
-        this.discount = discount;
-        this.description = description;
-        this.date = date;
-    }
+    private String pid, name, price, quantity, discount;
 
     public String getPid() {
         return pid;
@@ -50,14 +36,6 @@ public class Cart {
         this.quantity = quantity;
     }
 
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
     public String getDiscount() {
         return discount;
     }
@@ -66,19 +44,14 @@ public class Cart {
         this.discount = discount;
     }
 
-    public String getDescription() {
-        return description;
+    public Cart() {
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
+    public Cart(String pid, String name, String price, String quantity, String discount) {
+        this.pid = pid;
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+        this.discount = discount;
     }
 }

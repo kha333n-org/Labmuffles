@@ -11,7 +11,8 @@ public class Prevalent {
     public static final String userPhoneKey = "UserPhone";
     public static final String userPasswordKey = "UserPassword";
     public static final String userTypeKey = "UserType";
-    public static final String categoryKey = "category";
+    public static final String date = "date";
+    public static final String time = "time";
 
     //Products information...
     public static final String productsImagesFolder = "Product Images";
@@ -21,7 +22,6 @@ public class Prevalent {
     public static final String productDBTime = "time";
     public static final String productDBDescription = "description";
     public static final String productDBImage = "image";
-    public static final String productDBCategory = "category";
     public static final String productDBPrice = "price";
     public static final String productDBName = "name";
 
@@ -33,6 +33,8 @@ public class Prevalent {
     public static final String userProfileAddress = "address";
     public static final String userProfilePhoneNumber = "phone";
     public static final String userOrderPhone = "orderPhone";
+    public static final String userProfileCity = "city";
+    public static final String usersWithOrders = "usersWithOrders";
 
 
     //Cart information
@@ -45,23 +47,15 @@ public class Prevalent {
     public static final String cartDBUid = "uid";
     public static final String cartDBStatus = "status";
     public static final String cartDBDiscount = "discount";
-    public static final String cartDBUserView = "User View";
-    public static final String cartDBAdminView = "Admin View";
+    public static final String productsPerOrder = "productsPerOrder";
     public static final String cartDBProductsChild = "Products";
 
-    //Order information
-    public static final String orderDBRoot = "Orders";
-    public static final String orderDBPid = "pid";
-    public static final String orderDBPname = "pname";
-    public static final String orderDBPprice = "pprice";
-    public static final String orderDBPquantity = "pquantity";
-    public static final String orderDBPimage = "pimage";
-    public static final String orderDBPtotal = "ptotal";
-    public static final String orderDBPdate = "pdate";
-    public static final String orderDBPtime = "ptime";
-    public static final String orderDBPcategory = "pcategory";
-    public static final String orderDBPdescription = "pdescription";
-    public static final String orderDBPuid = "uid";
-    public static final String orderDBPstatus = "pstatus";
 
+    //Confirmed Orders information
+    public static final String ordersDBRoot = "Orders";
+    public static final String orderId = "orderId";
+    public static final String totalOrderAmount = "totalAmount";
+    public static final String orderState = "State";
+    public static final String versionCodeKey = "version_code";
+    public static final int updateCheckDelay = 1;
 }

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin.AdminDashboardActivity"
+    android:background="@color/black"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/slogan_category"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Admin Dashboard"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:id="@+id/admin_orders_list_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slogan_category"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/buttons"
+        android:text="See Orders"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/admin_edit_product_button"
+        android:background="@drawable/buttons"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/admin_orders_list_button"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:text="Edit Products" />
+
+    <Button
+        android:id="@+id/admin_add_product_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/admin_edit_product_button"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/buttons"
+        android:text="Add New Product"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/admin_add_admin_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/admin_add_product_button"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/buttons"
+        android:text="Add Admin"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/admin_reset_password_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/admin_add_admin_button"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/buttons"
+        android:text="Reset Password of a User"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/admin_logout_button"
+        android:layout_width="match_parent"
+        android:background="@drawable/buttons"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/admin_reset_password_button"
+        android:layout_margin="10dp"
+        android:text="Logout" />
+
+</RelativeLayout>
